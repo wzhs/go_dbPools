@@ -2,7 +2,7 @@ package go_dbPools
 
 import (
 	"sync"
-	"go_dbPools/redis"
+	"github.com/wzhs/go_dbPools/redis"
 )
 
 var once sync.Once

@@ -2,7 +2,7 @@ package go_dbPools
 
 import (
 	"sync"
-	"go_dbPools/mysql"
+	"github.com/wzhs/go_dbPools/mysql"
 )
 
 var DbMan *DbManage
