@@ -27,9 +27,11 @@ var _mysqlmaxIdels int
 
 func SetMysqlParas(host, database, user, password, charset string, maxOpenConns, maxIdleConns int){
 	_mysqlhost=host
+	_databse=database
 	_username=user
 	_password=password
 	_charset=charset
+
 
 	_mysqlmaxOpens=maxOpenConns
 	_mysqlmaxIdels=maxIdleConns
@@ -39,7 +41,7 @@ func SetMysqlParas(host, database, user, password, charset string, maxOpenConns,
 func NewDbManage() *DbManage {
 	db := &DbManage{
 		//Db: InitMySQLPool("222.186.136.77:6710", "ksdb", "root", "SHIyuxing5@!", "utf8mb4", 0, 0),
-		Db:mysql.InitMySQLPool(_host,_databse,_username,_password,_charset,_maxOpens,_maxIdels),
+		Db:mysql.InitMySQLPool(_mysqlhost,_databse,_username,_password,_charset,_mysqlmaxOpens,_mysqlmaxIdels),
 	}//默认连接
 	if len(_host)==0{
 		db.Db=mysql.InitMySQLPool("222.186.136.77:6710", "ksdb", "root", "SHIyuxing5@!", "utf8mb4", 0, 0)
