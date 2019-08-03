@@ -43,7 +43,7 @@ func NewDbManage() *DbManage {
 		//Db: InitMySQLPool("222.186.136.77:6710", "ksdb", "root", "SHIyuxing5@!", "utf8mb4", 0, 0),
 		Db:mysql.InitMySQLPool(_mysqlhost,_databse,_username,_password,_charset,_mysqlmaxOpens,_mysqlmaxIdels),
 	}//默认连接
-	if len(_host)==0{
+	if len(_mysqlhost)==0{
 		db.Db=mysql.InitMySQLPool("222.186.136.77:6710", "ksdb", "root", "SHIyuxing5@!", "utf8mb4", 0, 0)
 	}
 	return db
